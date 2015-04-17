@@ -25,7 +25,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Configuring the Image Cache
 
 No special configuration is needed for the cache manager. Only thing you need to do is register the name of the NBImageRequest subclass you will be using.
-```ruby
+```objective-c
 [[NBImageCache sharedManager] setImageRequestClass:[YourNBImageRequestSubClass class]];
 ```
 
@@ -50,7 +50,7 @@ NBImageRequest is an abstract object that is used as a vehicle for all image pro
 //in your MYNBImageRequest.m
 
 -(void) imageRequest:(NBImageRequest *)request isAskingForImageWithFileId:(long)file_id withCompletion:(void (^)(long file_id, UIImage * returnedImage))completionBlock {
->//do what ever you need to get the image. then call:
+> //do what ever you need to get the image. then call:
 
 >completionBlock(file_id, image);    
 
@@ -79,17 +79,17 @@ Normally there is no need to manually save images, as any image downloaded throu
 -(void) saveImage:(UIImage *)image andMetaData:(NSDictionary *)metaData {
 
 
->[[NBImageCache sharedManager] saveImage:image metaData:metaData withCompletion:^(BOOL success, UIImage *savedImage, NSDictionary *savedMetaData, NSError * error) {
+> [[NBImageCache sharedManager] saveImage:image metaData:metaData withCompletion:^(BOOL success, UIImage *savedImage, NSDictionary *savedMetaData, NSError * error) {
 
->>if (success) {
+>> if (success) {
 
->>>//image was saved successfully 
+>>> //image was saved successfully 
 
->>}else {
+>> }else {
 
->>>//image was not save. handle error gracefully
->>}
->}];
+>>> //image was not save. handle error gracefully
+>> }
+> }];
 }
 ```
 
