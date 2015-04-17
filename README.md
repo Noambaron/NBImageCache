@@ -18,7 +18,7 @@
 NBImageCache is composed of three main objects. the cache manager, the image request object, and the image file (Realm) object. The image file is the Realm scheme to be saved. The image request object is an abstract vehicle used to process each image operation (save/ retrieve/ delete) and the cache manager is the coordinator and API.
 
 
-## Usage
+## Example App 
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
