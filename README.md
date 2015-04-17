@@ -178,6 +178,10 @@ If needed, mainly when receiving a memory warning, its recommended to clear the 
 * NBImageCache uses the default realm to save images.
 
 
+## Apps Using NBImageCache
+1. [Nuro Secure Messaging](https://itunes.apple.com/app/id954858968)
+2. Your app here...
+
 ## Author
 
 Noam Bar-on, bar.on.noam1@gmail.com
