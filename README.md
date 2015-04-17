@@ -126,7 +126,7 @@ The cache manager never returns a UIImage directly. The requested image is inclu
 
     if (imageExists == NO) {
 
-        [self.someImageView setImage:SomePlaceHolderImage;
+        [self.someImageView setImage:somePlaceHolderImage;
     }
 }
 ```
@@ -166,7 +166,7 @@ To remove an image from the cache provide a file_id and size (in order to unique
 
 ## Clearing memory cache
 
-if needed, mainly when receiving a memory warning, its recommended to clear the memory cache. Note that this will only free the images from memory and they will all persist and be available on the (high performance) realm database, so performance should not be reduced.
+If needed, mainly when receiving a memory warning, its recommended to clear the memory cache. Note that this will only free the images from memory and they will all persist and be available on the (high performance) realm database, so performance should not be reduced.
 
 ```objective-c
  [[NBImageCache sharedManager] freeMemoryCache];
@@ -174,7 +174,7 @@ if needed, mainly when receiving a memory warning, its recommended to clear the 
 
 ## Other Considerations
 * Images are saved as png representation NSData objects
-* You must have Realm.io integrated in roder to use NBImageCache
+* You must have [Realm.io](http://realm.io/) integrated in roder to use NBImageCache
 * NBImageCache uses the default realm to save images.
 
 
