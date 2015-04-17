@@ -10,4 +10,4 @@
 
 
 //A free FlickrAPIKey is available at http://www.flickr.com/services/api/misc.api_keys.html
-#define FlickrAPIKey @"888ea514c25162ffec983e6a3ffc6786"
+#define FlickrAPIKey @""
