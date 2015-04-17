@@ -22,6 +22,15 @@ NBImageCache is composed of three main objects. the cache manager, the image req
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Installation
+
+NBImageCache is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```objective-c
+pod "NBImageCache"
+```
+
 ## Configuring the Image Cache
 
 No special configuration is needed for the cache manager. Only thing you need to do is register the name of the NBImageRequest subclass you will be using.
@@ -162,18 +171,6 @@ if needed, mainly when receiving a memory warning, its recommended to clear the 
 * Images are saved as png representation NSData objects
 * You must have Realm.io integrated in roder to use NBImageCache
 * NBImageCache uses the default realm to save images.
-
-
-## Requirements
-
-## Installation
-
-NBImageCache is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```objective-c
-pod "NBImageCache"
-```
 
 
 ## Author
