@@ -6,12 +6,12 @@
 
 ## What NBImageChache Does
 
- Utilizes Realm.io to store images on disk
- Retrieves images from cache or from the web, according to availability
- Lets you save optional meta data alongside each image
- Leaves all network activity to you
- Lets you add your functionality in key points through the process 
- Uses an asynchronous and serial approach processing each image request
+ * Utilizes Realm.io to store images on disk
+ * Retrieves images from cache or from the web, according to availability
+ * Lets you save optional meta data alongside each image
+ * Leaves all network activity to you
+ * Lets you add your functionality in key points through the process 
+ * Uses an asynchronous and serial approach processing each image request
 
 ## Usage
 
