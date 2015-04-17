@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'NBImageCache', :exclusive => true do
+  pod "NBImageCache", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "NBImageCache", :path => "../"
+
+  pod 'Kiwi'
+  pod 'FBSnapshotTestCase'
+end
