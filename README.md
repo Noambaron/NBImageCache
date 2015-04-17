@@ -33,7 +33,7 @@ No special configuration is needed for the cache manager. Only thing you need to
 
 NBImageRequest is an abstract object that is used as a vehicle for all image processing. Note that the Image is an entity that is uniquely identified by both a file_id AND a size in the image cache. You must subclass NBImageRequest and implement these two imageRequest lifeCycle abstract methods:
 
-```ruby
+```objective-c
 //in your MYNBImageRequest.h
 #import "NBImageRequest.h"
 
@@ -46,20 +46,20 @@ NBImageRequest is an abstract object that is used as a vehicle for all image pro
 @end
 ```
 
-```ruby
+```objective-c
 //in your MYNBImageRequest.m
 
 -(void) imageRequest:(NBImageRequest *)request isAskingForImageWithFileId:(long)file_id withCompletion:(void (^)(long file_id, UIImage * returnedImage))completionBlock {
-> //do what ever you need to get the image. then call:
+    //do what ever you need to get the image. then call:
 
->completionBlock(file_id, image);    
+    completionBlock(file_id, image);    
 
 }
 ```
 
 This is a mandatory abstract method. Add here the code for any network activity to get the image for the given file id. this method will only be called once for every file id and size, because once it retrieves an image from server, the image will be cached in memory and on disk.
 
-```ruby
+```objective-c
 -(void) willSaveImageWithRequest:(NBImageRequest *)request withCompletion:(void (^)(long file_id, NSError * error))completionBlock {    
 
 //add here any code you need to run before image is saved in cache. must call completion block and return a file_id 
@@ -75,21 +75,21 @@ This is a mandatory abstract method. Add here any processing you need to execute
 ## Providing Source Images to NBImageCache
 
 Normally there is no need to manually save images, as any image downloaded through the cache manager will be automatically saved. But if you need to manually insert an image you can do the following:
-```ruby
+```objective-c
 -(void) saveImage:(UIImage *)image andMetaData:(NSDictionary *)metaData {
 
 
-> [[NBImageCache sharedManager] saveImage:image metaData:metaData withCompletion:^(BOOL success, UIImage *savedImage, NSDictionary *savedMetaData, NSError * error) {
+    [[NBImageCache sharedManager] saveImage:image metaData:metaData withCompletion:^(BOOL success, UIImage *savedImage, NSDictionary *savedMetaData, NSError * error) {
 
->> if (success) {
+        if (success) {
 
->>> //image was saved successfully 
+            //image was saved successfully 
 
->> }else {
+        }else {
 
->>> //image was not save. handle error gracefully
->> }
-> }];
+            //image was not save. handle error gracefully
+        }
+    }];
 }
 ```
 
@@ -109,7 +109,7 @@ Provide an image to save, (and you can also pass a metaData NSDictionary that wi
 NBImageCache is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```ruby
+```objective-c
 pod "NBImageCache"
 ```
 
