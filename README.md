@@ -21,6 +21,8 @@ NBImageCache is composed of three main objects. the cache manager, the image req
 ## Example App 
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+You will also need to insert a FlickerAPIFey in the predefined macro on FlickrAPIKey.h
+A free FlickrAPIKey is available [here](http://www.flickr.com/services/api/misc.api_keys.html)
 
 ## Installation
 
