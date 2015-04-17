@@ -50,9 +50,9 @@ NBImageRequest is an abstract object that is used as a vehicle for all image pro
 //in your MYNBImageRequest.m
 
 -(void) imageRequest:(NBImageRequest *)request isAskingForImageWithFileId:(long)file_id withCompletion:(void (^)(long file_id, UIImage * returnedImage))completionBlock {
-//do what ever you need to get the image. then call:
+>//do what ever you need to get the image. then call:
 
-completionBlock(file_id, image);    
+>completionBlock(file_id, image);    
 
 }
 ```
@@ -64,7 +64,7 @@ This is a mandatory abstract method. Add here the code for any network activity 
 
 //add here any code you need to run before image is saved in cache. must call completion block and return a file_id 
 
-completionBlock(file_id, nil);
+>completionBlock(file_id, nil);
 
 }
 ```
@@ -79,17 +79,17 @@ Normally there is no need to manually save images, as any image downloaded throu
 -(void) saveImage:(UIImage *)image andMetaData:(NSDictionary *)metaData {
 
 
-[[NBImageCache sharedManager] saveImage:image metaData:metaData withCompletion:^(BOOL success, UIImage *savedImage, NSDictionary *savedMetaData, NSError * error) {
+>[[NBImageCache sharedManager] saveImage:image metaData:metaData withCompletion:^(BOOL success, UIImage *savedImage, NSDictionary *savedMetaData, NSError * error) {
 
-if (success) {
+>>if (success) {
 
-//image was saved successfully 
+>>>//image was saved successfully 
 
-}else {
+>>}else {
 
-//image was not save. handle error gracefully
-}
-}];
+>>>//image was not save. handle error gracefully
+>>}
+>}];
 }
 ```
 
@@ -112,7 +112,7 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "NBImageCache"
 ```
-`
+
 
 ## Author
 
