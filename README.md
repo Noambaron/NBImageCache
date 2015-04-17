@@ -67,7 +67,8 @@ This is a mandatory abstract method. Add here the code for any network activity 
 completionBlock(file_id, nil);
 
 }
-``
+```
+`
 
 This is a mandatory abstract method. Add here any processing you need to execute before intire save operation is complete. for example use this to compress the image and send it to the server to get back any metadata about it (like an id maybe..). you can also adjust the metadata object and the image, any changes to the request, image or metadata will be saved. Once done, you must call the completion block and include a file id.
 
@@ -90,7 +91,8 @@ if (success) {
 }
 }];
 }
-``
+```
+`
 
 Provide an image to save, (and you can also pass a metaData NSDictionary that will be saved with the image and returned on completion). Cache manager will do the following:
 
