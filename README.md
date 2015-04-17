@@ -28,7 +28,7 @@ No special configuration is needed for the cache manager. Only thing you need to
 ```ruby
 [[NBImageCache sharedManager] setImageRequestClass:[YourNBImageRequestSubClass class]];
 ```
-`
+
 ## Subclassing NBImageRequest
 
 NBImageRequest is an abstract object that is used as a vehicle for all image processing. Note that the Image is an entity that is uniquely identified by both a file_id AND a size in the image cache. You must subclass NBImageRequest and implement these two imageRequest lifeCycle abstract methods:
@@ -56,7 +56,7 @@ completionBlock(file_id, image);
 
 }
 ```
-`
+
 This is a mandatory abstract method. Add here the code for any network activity to get the image for the given file id. this method will only be called once for every file id and size, because once it retrieves an image from server, the image will be cached in memory and on disk.
 
 ```ruby
@@ -68,7 +68,7 @@ completionBlock(file_id, nil);
 
 }
 ```
-`
+
 
 This is a mandatory abstract method. Add here any processing you need to execute before intire save operation is complete. for example use this to compress the image and send it to the server to get back any metadata about it (like an id maybe..). you can also adjust the metadata object and the image, any changes to the request, image or metadata will be saved. Once done, you must call the completion block and include a file id.
 
@@ -92,7 +92,7 @@ if (success) {
 }];
 }
 ```
-`
+
 
 Provide an image to save, (and you can also pass a metaData NSDictionary that will be saved with the image and returned on completion). Cache manager will do the following:
 
