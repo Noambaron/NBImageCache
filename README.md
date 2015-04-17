@@ -28,7 +28,28 @@ No special configuration is needed for the cache manager. Only thing you need to
 ```ruby
 [[NBImageCache sharedManager] setImageRequestClass:[YourNBImageRequestSubClass class]];
 ```
+`
+## Subclassing NBImageRequest
 
+NBImageRequest is an abstract object that is used as a vehicle for all image processing. Note that the Image is an entity that is uniquely identified by both a file_id AND a size in the image cache. You must subclass NBImageRequest and implement these two imageRequest lifeCycle abstract methods:
+
+```ruby
+//in your MYNBImageRequest.h
+#import "NBImageRequest.h"
+@interface MYNBImageRequest : NBImageRequest
+-(void) imageRequest:(NBImageRequest *)request isAskingForImageWithFileId:(long)file_id withCompletion:(void (^)(long file_id, UIImage * returnedImage))completionBlock;
+-(void) willSaveImageWithRequest:(NBImageRequest *)request withCompletion:(void (^)(long file_id, NSError * error))completionBlock;
+@end
+```
+`
+```ruby
+//in your MYNBImageRequest.m
+-(void) imageRequest:(NBImageRequest *)request isAskingForImageWithFileId:(long)file_id withCompletion:(void (^)(long file_id, UIImage * returnedImage))completionBlock {
+//do what ever you need to get the image. then call:
+completionBlock(file_id, image);    
+}
+```
+`
 
 ## Requirements
 
@@ -40,6 +61,7 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "NBImageCache"
 ```
+`
 
 ## Author
 
@@ -47,6 +69,6 @@ Noam Bar-on, bar.on.noam1@gmail.com
 
 ## License
 
-<!--NBImageCache is available under the MIT license. See the LICENSE file for more info.-->
+NBImageCache is available under the MIT license. See the LICENSE file for more info.
 <!--=======-->
-Fast and asynchronous image cache, based on Realm.io and with a simple block based api
+<!--Fast and asynchronous image cache, based on Realm.io and with a simple block based api-->
