@@ -27,3 +27,5 @@ Noam Bar-on, bar.on.noam1@gmail.com
 ## License
 
 NBImageCache is available under the MIT license. See the LICENSE file for more info.
+=======
+Fast and asynchronous image cache, based on Realm.io and with a simple block based api
