@@ -25,7 +25,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Configuring the Image Cache
 
 No special configuration is needed for the cache manager. Only thing you need to do is register the name of the NBImageRequest subclass you will be using.
-`[[NBImageCache sharedManager] setImageRequestClass:[YourNBImageRequestSubClass class]];`
+```ruby
+[[NBImageCache sharedManager] setImageRequestClass:[YourNBImageRequestSubClass class]];
+```
+
 
 ## Requirements
 
@@ -34,9 +37,9 @@ No special configuration is needed for the cache manager. Only thing you need to
 NBImageCache is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-<!--```ruby-->
-<!--pod "NBImageCache"-->
-<!--```-->
+```ruby
+pod "NBImageCache"
+```
 
 ## Author
 
