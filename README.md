@@ -62,7 +62,7 @@ NBImageRequest is an abstract object that is used as a vehicle for all image pro
 
 -(void) imageRequest:(NBImageRequest *)request isAskingForImageWithFileId:(long)file_id withCompletion:(void (^)(long file_id, UIImage * returnedImage))completionBlock {
     
-    //do what ever you need to get the image. then call:
+    //do what ever you need to get the image. must call completion block and return a file_id:
 
     completionBlock(file_id, image);    
 
@@ -120,19 +120,22 @@ The cache manager never returns a UIImage directly. The requested image is inclu
 
         if (image) {
 
-            [self.imageView setImage:image];
+            [self.someImageView setImage:image];
         }
     }];
 
     if (imageExists == NO) {
 
-        [self.imageView setImage:placeHolderImage;
+        [self.someImageView setImage:SomePlaceHolderImage;
     }
 }
 ```
 Provide a size, and a file id (and you can also pass metaData object that will be returned on completion) and the cache manager will do the following:
+
 1. Look for the image in memory cache and return it through the completion block immediately if found. Return YES as the method return value
+
 2. If not in memory it will look for the image in realm dataase and return it through the completion block immediately if found. Return YES as the method return value
+
 3. If not on either the method will return NO immediately and also call asynchronously your subclass of NBImageRequest [request isAskingForImageWithFileId...]. When that returns, perhaps some time later, the completion block will be called with the image.
 
 ## Check if an Image is Available in NBImageCache
