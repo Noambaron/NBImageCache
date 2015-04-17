@@ -67,8 +67,8 @@ This is a mandatory abstract method. Add here the code for any network activity 
 completionBlock(file_id, nil);
 
 }
-```
-`
+``
+
 This is a mandatory abstract method. Add here any processing you need to execute before intire save operation is complete. for example use this to compress the image and send it to the server to get back any metadata about it (like an id maybe..). you can also adjust the metadata object and the image, any changes to the request, image or metadata will be saved. Once done, you must call the completion block and include a file id.
 
 ## Providing Source Images to NBImageCache
@@ -90,10 +90,12 @@ if (success) {
 }
 }];
 }
-```
-`
+``
+
 Provide an image to save, (and you can also pass a metaData NSDictionary that will be saved with the image and returned on completion). Cache manager will do the following:
+
 1. Call the abstract method [willSaveImageWithRequest...] on your subclassed ImageRequest. That gives you a chance to upload the image to server or process it anyway you like. Note that you must return a unique file_id in the completion block. 
+
 2. When receiving the file_id the cache manager will insert the image to the realm persistent cache and the memory cache, and will call its completion block once done.
 
 
