@@ -1,0 +1,25 @@
+PODS:
+  - FBSnapshotTestCase (1.6)
+  - Kiwi (2.3.1)
+  - NBImageCache (0.1.0)
+  - Realm (0.91.1):
+    - Realm/Headers (= 0.91.1)
+  - Realm/Headers (0.91.1)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - Kiwi
+  - NBImageCache (from `../`)
+  - Realm
+
+EXTERNAL SOURCES:
+  NBImageCache:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 9d5fe43b29ae3a0ed8fc829477971b281038f748
+  Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
+  NBImageCache: ce332b5b8eb0ac0dff601475c678e285cb80818d
+  Realm: b9c1fd9defa26aa7276ce938a8df52ec81f24528
+
+COCOAPODS: 0.35.0

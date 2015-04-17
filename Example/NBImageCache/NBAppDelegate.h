@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Noam Bar-on. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
 @interface NBAppDelegate : UIResponder <UIApplicationDelegate>
 
