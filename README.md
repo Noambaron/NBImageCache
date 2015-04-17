@@ -13,9 +13,19 @@
  * Lets you add your functionality in key points through the process 
  * Uses an asynchronous and serial approach processing each image request
 
+## How NBImageCache works
+
+NBImageCache is composed of three main objects. the cache manager, the image request object, and the image file (Realm) object. The image file is the Realm scheme to be saved. The image request object is an abstract vehicle used to process each image operation (save/ retrieve/ delete) and the cache manager is the coordinator and API.
+
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Configuring the Image Cache
+
+No special configuration is needed for the cache manager. Only thing you need to do is register the name of the NBImageRequest subclass you will be using.
+`[[NBImageCache sharedManager] setImageRequestClass:[YourNBImageRequestSubClass class]];`
 
 ## Requirements
 
