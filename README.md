@@ -1,9 +1,16 @@
 # NBImageCache
 
-[![CI Status](http://img.shields.io/travis/Noam Bar-on/NBImageCache.svg?style=flat)](https://travis-ci.org/Noam Bar-on/NBImageCache)
 [![Version](https://img.shields.io/cocoapods/v/NBImageCache.svg?style=flat)](http://cocoapods.org/pods/NBImageCache)
 [![License](https://img.shields.io/cocoapods/l/NBImageCache.svg?style=flat)](http://cocoapods.org/pods/NBImageCache)
 [![Platform](https://img.shields.io/cocoapods/p/NBImageCache.svg?style=flat)](http://cocoapods.org/pods/NBImageCache)
+## What NBImageChache Does
+
+- Utilizes Realm.io to store images on disk
+- Retrieves images from cache or from the web, according to availability
+- Lets you save optional meta data alongside each image
+- Leaves all network activity to you
+- Lets you add your functionality in key points through the process 
+- Uses an asynchronous and serial approach processing each image request
 
 ## Usage
 
@@ -27,5 +34,5 @@ Noam Bar-on, bar.on.noam1@gmail.com
 ## License
 
 <!--NBImageCache is available under the MIT license. See the LICENSE file for more info.-->
-=======
+<!--=======-->
 Fast and asynchronous image cache, based on Realm.io and with a simple block based api
