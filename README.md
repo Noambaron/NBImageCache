@@ -45,7 +45,7 @@ NBImageRequest is an abstract object that is used as a vehicle for all image pro
 
 @end
 ```
-`
+
 ```ruby
 //in your MYNBImageRequest.m
 
