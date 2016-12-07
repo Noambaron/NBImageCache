@@ -1,2 +1,1 @@
-$ cat .gitattributes
-*.rb linguist-language=Objective-C
+*.* linguist-language=objc
